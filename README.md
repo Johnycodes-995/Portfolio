@@ -21,6 +21,6 @@ This is a simple and elegant portfolio website built to highlight:
 ## 🌐 Live Preview
 
 View the live site here:  
-👉 [https://your-live-portfolio-link.com](https://your-live-portfolio-link.com)
+👉 [https://your-live-portfolio-link.com]( https://johnycodes-995.github.io/Portfolio/)
 
 
