@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - John Mwaura</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="android-chrome-512x512.png" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">John</div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="About.html" class="nav-link">About</a>
+        <a href="Projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <div class="container about">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="intro-text"><i>
+      Have a project in mind, a question, or just want to connect? I'd love to hear from you.<br>
+      Drop a message and I'll get back to you as soon as I can.</i>
+    </p>
+
+    <div class="about-content">
+      <!-- Optional contact icons section -->
+
+     <div class="about-details">
+  <div class="contact-card">
+    <p><img src="icons8-email-100.png" width="35"> johnym802@gmail.com</p>
+    <p><img src="icons8-phone-100.png" width="35"> +254797267228 / +254105758011</p>
+  </div>
+
+  <!-- contact form continues below -->
+</div>
+<div class="contact-form-container">
+  
+    <form action="https://formsubmit.co/johnym802@gmail.com" method="POST" class="contact-form">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Message From Portfolio Site">
+  <!-- your other inputs follow here -->
+
+    
+    <div class="form-row">
+      <div class="input-group">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+      </div>
+      <div class="input-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="input-group">
+        <label for="tel">Phone Number</label>
+        <input type="tel" id="tel" name="tel" placeholder="Optional">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="input-group full-width">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Your Message..." required></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="custom-btn">Send Message</button>
+    <div class="form-status" id="form-status"></div>
+
+  </form>
+</div>
+
+  </div>
+  </div>
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>Let's Build Something Cool Together</p>
+      <p><a href="mailto:johnym802@gmail.com">johnym802@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com"><img src="icons8-linkedin-100.png" alt="LinkedIn" /></a>
+        <a href="https://www.github.com"><img src="icons8-github-100.png" alt="GitHub" /></a>
+        <a href="https://www.tiktok.com"><img src="icons8-tiktok-100.png" alt="TikTok" /></a>
+      </div>
+      <p>&copy; 2025 John Mwaura. Front End Developer</p>
+    </div>
+  </footer>
+ <script>
+  const form = document.querySelector(".contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const firstName = form.firstname.value.trim();
+    const lastName = form.lastname.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let errors = [];
+
+    if (!firstName) errors.push("First name is required.");
+    if (!lastName) errors.push("Last name is required.");
+    if (!email || !emailPattern.test(email)) errors.push("Enter a valid email address.");
+    if (!message) errors.push("Please enter your message.");
+
+    if (errors.length > 0) {
+      status.className = "form-status error";
+      status.innerText = errors.join(" ");
+      status.style.display = "block";
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/johnym802@gmail.com", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json"
+      },
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        status.className = "form-status success";
+        status.innerText = "✅ Your message has been sent successfully!";
+        status.style.display = "block";
+        form.reset();
+      } else {
+        status.className = "form-status error";
+        status.innerText = "❌ Something went wrong. Please try again later.";
+        status.style.display = "block";
+      }
+    })
+    .catch(error => {
+      status.className = "form-status error";
+      status.innerText = "❌ Network error. Please check your connection.";
+      status.style.display = "block";
+    });
+  });
+</script>
+
+
+
+</body>
+</html>

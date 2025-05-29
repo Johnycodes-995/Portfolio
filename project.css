@@ -1,0 +1,279 @@
+/* ====== Base Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Sora', 'Roboto', sans-serif;
+  background-color: #1e1e1e;
+  color: #fafafa;
+  line-height: 1.6;
+}
+
+/* ====== Container ====== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+/* ====== Header ====== */
+.header {
+  background-color: #1e1e1e;
+  padding: 1rem 0;
+  
+  
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fafafa; /* Edit your brand color */
+  
+}
+/* === Navigation Links with Hover + Active Underline === */
+.nav-link {
+  position: relative;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #333; /* <-- Change to your preferred text color */
+  font-weight: 500;
+}
+
+/* Hover underline effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #4ade80; /* <-- Change to your brand color */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Keeps underline on the active page */
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #4ADE80;
+  font-weight: 500;
+}
+
+/* ====== Section Title & Intro ====== */
+.section-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  text-align: start;
+  font-size: 18px;
+  margin-bottom: 3rem;
+  color: #cfcfcf;
+}
+
+/* ====== Projects Layout ====== */
+.projects-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  width: 340px;
+  height: 288px;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: visible;         /* allow image zoom outside */
+  position: relative;
+}
+
+/* ====== Image Zoom on Hover ====== */
+.project-image {
+  width: 100%;
+  height: 200px;              /* constrain image container height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;          /* allow image to overflow on zoom */
+  position: relative;
+  border-radius: 10px;
+}
+
+.project-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;       /* fit image inside box without cropping */
+  transition: transform 0.4s ease;
+  transform-origin: center center;
+}
+
+
+.project-card:hover .project-image img {
+  transform: scale(1.6);
+  z-index: 10;
+  position: relative;
+}
+
+
+.project-card p {
+  font-size: 16px;
+  margin-top: 1rem;
+}
+/*call to action message*/
+.call-to-action {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 50px;
+  color: #fafafa;
+}
+
+/* ====== CTA Button ====== */
+.center-button {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #4ade80;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #4ade80;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 240px;
+  height: 40px;
+  text-align: center;
+  line-height: 1;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #4ade80;
+}
+
+/* ====== Footer ====== */
+.footer {
+  background-color: #101010;
+  color: #fafafa;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #4ade80;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links img {
+  width: 30px;
+  margin: 0 10px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.footer p:last-of-type {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+/* ====== Responsive Styles ====== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1,
+  .hero-text h2,
+  .hero-text p {
+    font-size: 24px;
+  }
+
+  .btn {
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 240px;
+  }
+
+  .projects-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer-container {
+    padding: 0 1rem;
+  }
+
+  .social-links img {
+    margin: 0 5px;
+  }
+}
+
