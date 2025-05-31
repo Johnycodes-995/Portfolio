@@ -237,11 +237,13 @@ body {
   height: auto;
   max-width: 100%;
   display: block;
+  padding-left:2px
   }
 
   .about-content {
     width: 100%;
     max-width: 320px;
+    padding-left:2px
   }
 
   .footer-container {
