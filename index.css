@@ -240,6 +240,8 @@ body {
     width: 100%;
     gap: 0.5rem;
   }
+  .nav-link::after {
+    bottom: 1px;
 
   .hero {
     flex-direction: column;
