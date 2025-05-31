@@ -241,8 +241,8 @@ body {
     gap: 0.5rem;
   }
   .nav-link::after {
-    bottom: 1px;
-}
+    bottom: -4px;
+  }
 
   .hero {
     flex-direction: column;
