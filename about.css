@@ -203,23 +203,31 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    padding: 0 1rem;
   }
 
   .nav {
+    display: flex;
     flex-direction: column;
     width: 100%;
     gap: 0.5rem;
   }
 
+  .nav a {
+    margin-left: 0; /* Remove left spacing on small screens */
+  }
+
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 2rem 1rem;
   }
 
   .hero-text h1,
   .hero-text h2,
   .hero-text p {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 1.4;
   }
 
   .btn {
@@ -228,29 +236,55 @@ body {
     max-width: 240px;
   }
 
-  .about {
+  .about-content {
     flex-direction: column;
     align-items: center;
-  }
-  .about-image img{
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-  padding-left:2px
-  align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
   }
 
-  .about-content {
+  .about-image img {
     width: 100%;
-    max-width: 320px;
-    padding-left:2px
-    align-items: center;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .about-details {
+    padding: 0 1rem;
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .section-title::after {
+    width: 100px;
+    margin: 0.5rem auto 0;
+  }
+
+  .custom-btn {
+    width: 80%;
+    max-width: 240px;
   }
 
   .footer-container {
     padding: 0 1rem;
   }
+
+  .social-links img {
+    margin: 0 5px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+}
+
 
   .social-links img {
     margin: 0 5px;
