@@ -238,12 +238,14 @@ body {
   max-width: 100%;
   display: block;
   padding-left:2px
+  align-items: center;
   }
 
   .about-content {
     width: 100%;
     max-width: 320px;
     padding-left:2px
+    align-items: center;
   }
 
   .footer-container {
